@@ -12,12 +12,22 @@ public class Stack01 {
         this.arr = new int[size];
     }
 
+    public int[] getArr() {
+        return this.arr;
+    }
+
     public void push(int value) {
         this.arr[this.pointer] = value;
         this.pointer++;
     }
 
-    public int[] getArr() {
-        return this.arr;
+    public int pop() {
+
+        this.pointer--;
+        int popped = arr[this.pointer];
+
+        return popped;
     }
+
+
 }
