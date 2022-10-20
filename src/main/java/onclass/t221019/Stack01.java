@@ -1,4 +1,4 @@
-package t221019;
+package onclass.t221019;
 
 public class Stack01 {
 

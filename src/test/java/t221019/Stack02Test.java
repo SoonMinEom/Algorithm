@@ -2,7 +2,7 @@ package t221019;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import t221020.Stack02;
+import onclass.t221020.Stack02;
 
 import java.util.EmptyStackException;
 
