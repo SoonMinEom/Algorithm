@@ -1,5 +1,7 @@
 package t221020;
 
+import java.util.EmptyStackException;
+
 public class Stack02 {
 
     private Integer[] arr;
@@ -24,9 +26,22 @@ public class Stack02 {
     }
 
     public int pop() {
+
+        if(this.isEmpty()) {
+            throw new RuntimeException("Stack Is Empty!");
+        }
+
         this.pointer--;
         int popped = this.arr[this.pointer];
 
         return popped;
+    }
+
+    public boolean isEmpty() {
+        if (this.pointer ==0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

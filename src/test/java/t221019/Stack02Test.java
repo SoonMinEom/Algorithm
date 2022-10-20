@@ -37,6 +37,23 @@ class Stack02Test {
 
         assertEquals(20,st.pop());
         assertEquals(10,st.pop());
+
         // st.pop() 비어있을땐? -> isEmpty
+        // Exception예외의 검증, 람다식(Modern Java식)표현
+        assertThrows(RuntimeException.class,()->{
+            st.pop();
+        });
+    }
+
+    @Test
+    void isEmpty() {
+        Stack02 st = new Stack02();
+//        assertFalse(st.isEmpty());
+
+        st.push(10);
+        assertFalse(st.isEmpty());
+
+        st.pop();
+//        assertFalse(st.isEmpty());
     }
 }
