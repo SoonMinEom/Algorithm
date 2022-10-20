@@ -29,5 +29,20 @@ public class Stack01 {
         return popped;
     }
 
+    public int peek() {
+
+        int peeked = arr[this.pointer-1];
+
+        return peeked;
+    }
+
+    public boolean isEmpty() {
+        if(this.pointer == 0 ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }
