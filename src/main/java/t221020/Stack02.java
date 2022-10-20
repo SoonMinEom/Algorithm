@@ -44,4 +44,11 @@ public class Stack02 {
             return false;
         }
     }
+
+    public int peek() {
+        if(this.isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return this.arr[pointer-1];
+    }
 }
