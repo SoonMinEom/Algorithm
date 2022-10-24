@@ -33,7 +33,6 @@ public class SolveBracket {
                 st.pop();
             }
         }
-
         return st.empty();
     }
 
