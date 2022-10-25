@@ -18,6 +18,17 @@ public class KthNum {
         return answer;
     }
 
+    public int[] practice (int[] arr, int[][] commands) {
+        int[] answer = new int[commands.length];
+        int idx = 0;
+        for (int[] command : commands) {
+            int[] slicedArr = Arrays.copyOfRange(arr, command[0]-1, command[1]);
+            Arrays.sort(slicedArr);
+            answer[idx++] = slicedArr[command[2]-1];
+        }
+        return answer;
+    }
+
     public int getKthNum ( int[] command ) {
         int frIdx = command[0];
         int toIdx = command[1];
