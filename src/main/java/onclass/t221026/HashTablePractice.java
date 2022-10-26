@@ -21,14 +21,23 @@ public class HashTablePractice {
             return value;
         }
     }
-    List<Node>[] table = new ArrayList[1000];
+
+    int size = 10000;
+    List<Node>[] table = new ArrayList[10000];
+    public HashTablePractice() {
+    }
+
+    public HashTablePractice(int size) {
+        this.size = size;
+        this.table = new ArrayList[size];
+    }
 
     public int hash(String key) {
         int asciiSum = 0;
         for (int i = 0; i < key.length(); i++) {
             asciiSum += key.charAt(i);
         }
-        return asciiSum;
+        return asciiSum%size;
     }
 
     public void insert(String key, Integer value) {
