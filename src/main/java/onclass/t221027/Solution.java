@@ -23,7 +23,7 @@ public class Solution {
 
         // 만들어진 완주자 명단에서 참가자 이름 하나가 발견될때마다 value -1
         for (String part : participant) {
-            // 아예 이름을 반견하지 못한 경우
+            // 참가자 이름을 완주자 명단에서 발견하지 못한 경우 = 완주하지 못한 선수
             if (parts.get(part) == null) {
                 answer = part;
             } else {
