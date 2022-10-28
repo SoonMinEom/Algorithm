@@ -1,6 +1,7 @@
-package onclass.t221027;
+package onclass.t221028;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class PocketMon {
 
