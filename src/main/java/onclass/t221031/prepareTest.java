@@ -18,7 +18,6 @@ public class prepareTest {
         int[] arr2 = {2,1,2,3,2,4,2,5};
         int[] arr3 = {3,3,1,1,2,2,4,4,5,5};
 
-
         for (int i = 0; i < answers.length; i++) {
             if(answers[i] == arr1[i%arr1.length]) {
                 cnt[0]++;
@@ -42,6 +41,7 @@ public class prepareTest {
         cntMap.put(2,cnt[1]);
         cntMap.put(3,cnt[2]);
 
+        // max 구하기
         int max = 0;
 
         for (Integer value : cntMap.values()) {
@@ -50,6 +50,7 @@ public class prepareTest {
             }
         }
 
+        // max와 같은 value를 가진 key값을 List에 추가
         List<Integer> answer = new ArrayList<>();
 
         for (int i = 1; i <= 3; i++) {
