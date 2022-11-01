@@ -1,13 +1,14 @@
 package onclass.t221101;
 
+interface StatementStrategy {
+    boolean compare (int a, int b);
+}
+
 
 public class TemplateCallbackPrime {
-    boolean range(int a, int b) {
-        return a <b;
-    }
 
-    public boolean isPrime(int num) {
-        for (int i = 2; range(i, num) ; i++) {
+    public boolean isPrime(int num, StatementStrategy stmt) {
+        for (int i = 2; stmt.compare(i, num) ; i++) {
             if (num % i == 0) return false;
         }
         return true;
