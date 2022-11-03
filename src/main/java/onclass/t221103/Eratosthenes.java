@@ -1,5 +1,7 @@
 package onclass.t221103;
 
+import java.util.Arrays;
+
 public class Eratosthenes {
 
     public void leve1() {
@@ -8,8 +10,35 @@ public class Eratosthenes {
         }
     }
 
+    public void level2() {
+
+        // 에라토스테네스의 체 기본 세팅
+        // 1. "2 ~ 원하는 범위 "의 숫자가 담긴  int[] 배열 선언
+        //  2. 위에서 만든 배열과 같은 길이의 boolean[] 배열을 만들고, true로 초기화.
+
+        // 원하는 범위
+        int N = 50;
+
+        // 1. 과정
+        // N-1개 만큼. 즉, 2~50까지 총 49개의 숫자가 들어감
+        int[] nums = new int[N-1];
+        // nums에 2~50을 채워 넣음.
+        for (int i = 0; i < nums.length; i++) {
+            nums[i]=i+2;
+        }
+
+        System.out.println(Arrays.toString(nums));
+
+        // 2. 과정
+        // nums만큼 checks생성
+        boolean[] checks = new boolean[nums.length];
+        // checks를 true 로 초기화 (기본값 : false)
+        Arrays.fill(checks,true);
+
+    }
+
     public static void main(String[] args) {
         Eratosthenes er = new Eratosthenes();
-        er.leve1();
+        er.level2();
     }
 }
