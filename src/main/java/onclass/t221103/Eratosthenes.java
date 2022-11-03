@@ -2,28 +2,14 @@ package onclass.t221103;
 
 public class Eratosthenes {
 
-    public int checkPrime(int n) {
-        int cnt = 0;
-        int[] prime = new int[n+1];
-
-        for (int i = 0; i < prime.length; i++) {
-            prime[i] = i;
+    public void leve1() {
+        for (int i = 0; i <99 ; i++) {
+            System.out.printf("%d, %d\n", (i+2), (i+1)*2);
         }
+    }
 
-        for (int i = 0; i*i <n ; i++) {
-            if(prime[i] == 0) {
-                continue;
-            }
-            for (int j = i*i; j <n ; j++) {
-                prime[j]=0;
-            }
-        }
-
-        for (int i = 0; i < prime.length; i++) {
-            if (prime[i] != 0) {
-                cnt++;
-            }
-        }
-        return cnt;
+    public static void main(String[] args) {
+        Eratosthenes er = new Eratosthenes();
+        er.leve1();
     }
 }
