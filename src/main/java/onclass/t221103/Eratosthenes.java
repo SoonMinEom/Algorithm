@@ -35,6 +35,22 @@ public class Eratosthenes {
         // checks를 true 로 초기화 (기본값 : false)
         Arrays.fill(checks,true);
 
+        // 2의 배수 지우기
+        // idx : 0 1 2 3 4 5 6 7 8 9
+        // nu :  2 3 4 5 6 7 8 9 10 11
+
+        int multipleof = 2;
+        for (int i = 2 ; i < nums.length; i += 2) {
+            checks[i] = false;
+        }
+
+        // checks를 참조해서  2가 지워진 배열을 출력해보자
+        for (int i = 0; i < checks.length; i++) {
+            if (checks[i] == true) {
+                System.out.printf("%d, ", nums[i]);
+            }
+        }
+
     }
 
     public static void main(String[] args) {
