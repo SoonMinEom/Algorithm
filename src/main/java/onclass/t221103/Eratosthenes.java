@@ -12,7 +12,7 @@ public class Eratosthenes {
         }
     }
 
-    public void level2() {
+    public void level2(int N) {
 //        if(N==2) return 1;
 
         // 에라토스테네스의 체 기본 세팅
@@ -20,7 +20,7 @@ public class Eratosthenes {
         //  2. 위에서 만든 배열과 같은 길이의 boolean[] 배열을 만들고, true로 초기화.
 
         // 원하는 범위
-        int N = 50;
+//        int N = 50;
 
         // 1. 과정
         // N-1개 만큼. 즉, 2~50까지 총 49개의 숫자가 들어감
@@ -96,6 +96,6 @@ public class Eratosthenes {
 
     public static void main(String[] args) {
         Eratosthenes er = new Eratosthenes();
-        er.level2();
+        er.level2(100000);
     }
 }
