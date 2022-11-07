@@ -23,11 +23,14 @@ public class DividableNum {
             // 한 줄로 표현
             answer = new int[] {-1};
         } else {
-            answer = new int[answerlist.size()];
-            int idx = 0;
-            for (Integer integer : answerlist) {
-                answer[idx++] = integer;
-            }
+//            answer = new int[answerlist.size()];
+//            int idx = 0;
+//            for (Integer integer : answerlist) {
+//                answer[idx++] = integer;
+//            }
+            // List 를 array 로 바꾸자!! ->.toArray() 사용하면 됨.
+            // but, array가 int와 같은 원시 타입인 경우, 아래와 같은 추가 작업 필요.
+            answer = answerlist.stream().mapToInt(Integer::intValue).toArray();
         }
 
         Arrays.sort(answer);
@@ -62,6 +65,6 @@ public class DividableNum {
     public static void main(String[] args) {
         DividableNum dn = new DividableNum();
         int[] a = {5,9,7,10};
-        System.out.println(Arrays.toString(dn.solution2(a,5)));
+        System.out.println(Arrays.toString(dn.solution(a,5)));
     }
 }
