@@ -19,18 +19,24 @@ public class BinarySearch {
         int midIdx = (endIdx+1-startIdx)/2;
 
         int answer = 0;
+
 //        1 2 3 4 5 6 7 8 9 10 11
 
-        while (nums[midIdx] == target) {
-            if(nums[midIdx] < target) {
-                startIdx = midIdx +1;
+        while (nums[midIdx] != target) {
+            if (nums[midIdx] < target) {
+                startIdx = midIdx + 1;
             } else if (nums[midIdx] > target) {
-                endIdx = midIdx -1;
+                endIdx = midIdx - 1;
             }
+            midIdx = (endIdx+1-startIdx)/2;
         }
-            answer = midIdx+2;
+
+        answer = midIdx+1;
 
         System.out.println(answer);
+
+
+
 
 
     }
