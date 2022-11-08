@@ -16,19 +16,21 @@ public class BinarySearch {
 
         int startIdx = 0;
         int endIdx = nums.length-1;
-        int midIdx = (endIdx+1+startIdx)/2;
 
-        while (nums[midIdx] != target) {
-//            System.out.printf("시작 : %d 끝 : %d\n",startIdx,endIdx);
+        int answer = -1;
+
+        while (startIdx <= endIdx) {
+            System.out.printf("시작 : %d 끝 : %d\n",startIdx,endIdx);
+            int midIdx = (endIdx+startIdx)/2;
             if (nums[midIdx] < target) {
                 startIdx = midIdx + 1;
             } else if (nums[midIdx] > target) {
                 endIdx = midIdx - 1;
             } else {
-                System.out.println(midIdx);
+                answer = midIdx+1;
+                break;
             }
-            midIdx = (endIdx+1+startIdx)/2;
         }
-        System.out.println(midIdx+1);
+        System.out.println(answer);
     }
 }
