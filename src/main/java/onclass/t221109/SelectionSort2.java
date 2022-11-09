@@ -52,5 +52,9 @@ public class SelectionSort2 {
             return a < b;
         });
         ss4.selectionSort();
+
+        // 더욱 간단한 람다식.
+        SelectionSort2 ss5 = new SelectionSort2((a,b) -> a > b);
+        ss5.selectionSort();
     }
 }
