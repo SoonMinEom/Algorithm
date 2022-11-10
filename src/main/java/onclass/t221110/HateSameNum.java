@@ -4,23 +4,19 @@ import java.util.*;
 //실패..
 public class HateSameNum {
     public int[] solution(int []arr) {
-        Stack<Integer> stack = new Stack<>();
 
+        List<Integer> answerList = new ArrayList<>();
+
+        answerList.add(arr[0]);
         for (int i : arr) {
-            if (stack.empty()) {
-                stack.push(i);
-            } else if (stack.peek() != i) {
-                stack.push(i);
-            }
+           if (answerList.get(answerList.size()-1) != i) {
+               answerList.add(i);
+           }
         }
 
-        int[] answer = {};
+//        System.out.println(answerList);
 
-        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        for (int i = 0; i < stack.size(); i++) {
-            System.out.println(stack.peek());
-        }
-
+        int[] answer = answerList.stream().mapToInt(Integer::intValue).toArray();
 
         return answer;
     }
