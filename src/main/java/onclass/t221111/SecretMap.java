@@ -1,5 +1,7 @@
 package onclass.t221111;
 
+import java.util.Arrays;
+
 public class SecretMap {
     // 2 진수 리턴 메소드를 직접 만들어봐요
     public String toBinary(int num) {
@@ -19,34 +21,23 @@ public class SecretMap {
 
     public String[] solution(int n, int[] arr1, int[] arr2) {
 
-        // 2진수 리턴 메소드를 직접 만들어봐요
+        String[] sArr1 = new String[n];
+        String[] sArr2 = new String[n];
 
+        for (int i = 0; i < n ; i++) {
+            //arr1
+            for (int j = 0; j < n ; j++) {
 
+                String binStr1 = Integer.toBinaryString(arr1[i]);
+                sArr1[i] = "0".repeat(n - binStr1.length()) + binStr1;
 
-//        String[] strArr1 = new String[n];
-//        for (int i : arr1) {
-//            Integer.toBinaryString(i);
-//        }
-//
-//        String[] strArr2 = new String[n];
-//        for (int i : arr2) {
-//            Integer.toBinaryString(i);
-//        }
-//
-//        for (int i = 0; i < ; i++) {
-//
-//        }
-//
-//        if(strArr1[1].charAt(0) != strArr2[1].charAt(0)) {
-//            strArr1[1].charAt(0) = '0';
-//            strArr2[1] = "0";
-//        }
-
-        String result = "";
-        while (arr1[1] > 0) {
-            result += (arr1[1] % 2);
-            arr1[1] = arr1[1] /2;
+                String binStr2 = Integer.toBinaryString(arr2[i]);
+                sArr2[i] = "0".repeat(n - binStr2.length()) + binStr2;
+            }
         }
+
+        System.out.println(Arrays.toString(sArr1));
+        System.out.println(Arrays.toString(sArr2));
 
 
         String[] answer = {};
@@ -55,8 +46,11 @@ public class SecretMap {
     }
 
     public static void main(String[] args) {
-
+        int n = 5;
+        int[] arr1 = {9, 20, 28, 18, 11};
+        int[] arr2 = {30, 1, 21, 17, 28};
         SecretMap sm = new SecretMap();
-        System.out.println(sm.toBinary(30));
+//        System.out.println(sm.toBinary(30));
+        sm.solution(n, arr1, arr2);
     }
 }
