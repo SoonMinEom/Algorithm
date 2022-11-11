@@ -1,7 +1,27 @@
 package onclass.t221111;
 
 public class SecretMap {
+    // 2 진수 리턴 메소드를 직접 만들어봐요
+    public String toBinary(int num) {
+        String first = "";
+        while (num > 0) {
+            first += (num % 2);
+            num /= 2;
+        }
+
+        String result = "";
+        for (int i = first.length()-1 ; i >=0 ; i--) {
+            result += first.charAt(i);
+        }
+
+        return result;
+    }
+
     public String[] solution(int n, int[] arr1, int[] arr2) {
+
+        // 2진수 리턴 메소드를 직접 만들어봐요
+
+
 
 //        String[] strArr1 = new String[n];
 //        for (int i : arr1) {
@@ -22,14 +42,13 @@ public class SecretMap {
 //            strArr2[1] = "0";
 //        }
 
-//        StringBuilder result = new StringBuilder();
-//        while (arr1[1] > 0) {
-//            result.append(arr1[1] % 2);
-//            arr1[1] = arr1[1] /2;
-//        }
-//        arr1[1] / 2;
-//        arr1[1] % 2;
-//
+        String result = "";
+        while (arr1[1] > 0) {
+            result += (arr1[1] % 2);
+            arr1[1] = arr1[1] /2;
+        }
+
+
         String[] answer = {};
         return answer;
 
@@ -37,12 +56,7 @@ public class SecretMap {
 
     public static void main(String[] args) {
 
-        StringBuilder result = new StringBuilder();
-        int num = 9;
-        while (num > 0) {
-            result.append(num % 2);
-            num = num /2;
-        }
-        System.out.println(result);
+        SecretMap sm = new SecretMap();
+        System.out.println(sm.toBinary(30));
     }
 }
