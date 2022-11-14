@@ -47,7 +47,7 @@ public class Eratosthenes2 {
 
         // 위의 식을 for문으로 반복 처리
         for (int i = 2; i*i <= length ; i++) {
-            for (int j = 2+(i-2)*2; j < arr.length ; j +=i) {
+            for (int j = 2*(i-1); j < arr.length ; j +=i) {
                 arr[j] = 0;
             }
         }
