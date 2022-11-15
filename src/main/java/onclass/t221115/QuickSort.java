@@ -64,7 +64,7 @@ public class QuickSort {
 
     public List<Integer> sort (List<Integer> arr) {
 
-        if (arr.size() ==0) {
+        if (arr.size() <= 1) {
             return arr;
         }
 
@@ -84,21 +84,15 @@ public class QuickSort {
             }
         }
 
-        System.out.println("smaller : " + smaller);
-        System.out.println("middle : " + middle);
-        System.out.println("bigger : " + bigger);
+//        System.out.println("smaller : " + smaller);
+//        System.out.println("middle : " + middle);
+//        System.out.println("bigger : " + bigger);
 
-        if (smaller.size() ==0 && bigger.size() ==0) {
-            return merge(smaller,middle,bigger);
-        }
-
-//        if (smaller.size() == 0 && bigger.size() == 0){
-//            return null;
+//        if (smaller.size() ==0 && bigger.size() ==0) {
+//            return middle;
 //        }
-//
-//        sort(smaller);
-//        sort(bigger);
-        return merge(sort(smaller),sort(middle),sort(bigger));
+
+        return merge(sort(smaller),middle,sort(bigger));
     }
 
     public static void main(String[] args) {
