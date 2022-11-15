@@ -65,7 +65,7 @@ public class QuickSort {
     public List<Integer> sort (List<Integer> arr) {
 
         if (arr.size() ==0) {
-            return null;
+            return arr;
         }
 
         int pivot = arr.get(arr.size()/2);
@@ -88,6 +88,10 @@ public class QuickSort {
         System.out.println("middle : " + middle);
         System.out.println("bigger : " + bigger);
 
+        if (smaller.size() ==0 && bigger.size() ==0) {
+            return merge(smaller,middle,bigger);
+        }
+
 //        if (smaller.size() == 0 && bigger.size() == 0){
 //            return null;
 //        }
@@ -105,9 +109,9 @@ public class QuickSort {
         }
 
         QuickSort qs = new QuickSort();
-        qs.sort(list);
 
-        System.out.println(list);
+
+        System.out.println(qs.sort(list));
 
 
     }
