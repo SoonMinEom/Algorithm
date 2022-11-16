@@ -1,5 +1,7 @@
 package onclass.t221116;
 
+import java.util.Arrays;
+
 public class QuickSort {
     public void sort(int[] arr) {
 
@@ -7,12 +9,10 @@ public class QuickSort {
         int leftIdx = 0;
         int rightIdx = arr.length-1;
 
-        while () {
-
+        while (arr[leftIdx] < arr[pivotIdx]) {
+            System.out.printf("leftIdx : %d, value : %d, pivot : %d\n", leftIdx, arr[leftIdx], arr[pivotIdx] );
+            leftIdx++;
         }
-
-
-
     }
 
     public static void main(String[] args) {
