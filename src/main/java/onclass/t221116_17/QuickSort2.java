@@ -31,6 +31,8 @@ public class QuickSort2 {
 
             // 멈춰 있는 두 인덱스 값을 서로 교환
             // -> pivot 보다 큰 값은 오른쪽으로, pivot 보다 작은 값은 왼쪽으로 서로 교환 됨.
+            // 이런 교환이 발생할 때 pivot 의 위치(Idx)는 달라질 수 있지만, pivot 의 값은 변화하지 않음.
+            // -> 그래서 if(leftIdx <= rightIdx) 조건을 붙여 교환 하는 것.
             if(leftIdx <= rightIdx) {
                 int temp = arr[leftIdx];
                 arr[leftIdx] = arr[rightIdx];
@@ -44,14 +46,17 @@ public class QuickSort2 {
             // 위 과정을, leftIdx <= rightIdx 동안에만 반복.
             // -> 즉, leftIdx > rightIdx 면 while 종료 ( 두 인덱스가 서로 교차 )
             // -> 즉, 왼쪽에서의 탐색, 오른쪽에서의 탐색이 끝날 때까지.
+            System.out.println(Arrays.toString(arr));
         }
 
         // pivot 기준 왼쪽 값들을 다시 sort
         // leftIdx, rightIdx 가 교차 되었으므로, 오른쪽 값들의 endIdx = rightIdx
+        // 단, startIdx < rightIdx 인 경우에만 sort = 값이 두 개 이상일 때만 sort
         if (startIdx < rightIdx) sort(arr, startIdx, rightIdx);
 
         // pivot 기준 오른쪽 값들을 다시 sort
         // leftIdx, rightIdx 가 교차 되었으므로, 오른쪽 값들의 startIdx = leftIdx
+        // 단, endIdx > leftIdx 인 경우에만 sort = 값이 두 개 이상일 때만 sort
         if (endIdx > leftIdx) sort(arr, leftIdx, endIdx);
 
         return arr;
@@ -64,6 +69,7 @@ public class QuickSort2 {
         int[] arr3 = {2, 1, 3, 6, 4, 5, 7};
 
         QuickSort2 qs = new QuickSort2();
+        System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(qs.sort(arr, 0, arr.length-1)));
     }
 }
