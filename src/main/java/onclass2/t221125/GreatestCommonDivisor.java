@@ -1,5 +1,7 @@
 package onclass2.t221125;
 
+import java.util.Scanner;
+
 public class GreatestCommonDivisor {
     public static int gcd(int a, int b) {
         if(a == b) return a;
@@ -8,6 +10,7 @@ public class GreatestCommonDivisor {
     }
 
     public static void main(String[] args) {
-        System.out.println(gcd(196,42));
+        Scanner sc =new Scanner(System.in);
+        System.out.println(gcd(sc.nextInt(),sc.nextInt()));
     }
 }
