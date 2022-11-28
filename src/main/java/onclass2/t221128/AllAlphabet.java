@@ -28,7 +28,13 @@ public class AllAlphabet {
     }
 
     public void solution3(String prefix, char a) {
-        if (a>90) return;
+        if (a>90) {
+            char temp = prefix.charAt(0);
+            temp++;
+            prefix = temp+"";
+            a -= 26;
+            if (temp > 90) return;
+        }
         System.out.printf("%s%s\n",prefix,a++);
         solution3(prefix,a);
     }
