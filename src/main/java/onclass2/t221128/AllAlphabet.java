@@ -21,9 +21,14 @@ public class AllAlphabet {
             }
         }
     }
+    public void solution2(char a) {
+        if (a>90) return;
+        System.out.println(a++);
+        solution2(a);
+    }
 
     public static void main(String[] args) {
         AllAlphabet aa = new AllAlphabet();
-        aa.solution();
+        aa.solution2('A');
     }
 }
