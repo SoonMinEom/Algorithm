@@ -26,7 +26,6 @@ public class AllAlphabet {
         System.out.println(a++);
         solution2(a);
     }
-
     public void solution3(String prefix, char a) {
         if (a>90) {
             char temp = prefix.charAt(0);
@@ -38,8 +37,17 @@ public class AllAlphabet {
         System.out.printf("%s%s\n",prefix,a++);
         solution3(prefix,a);
     }
+    public void solution4(String prefix,int length) {
+        if (prefix.length() > length) {
+            System.out.println(prefix);
+            return;
+        }
+        for (char c = 'A' ; c <= 'Z' ; c++) {
+            solution4(prefix+c,length);
+        }
+    }
     public static void main(String[] args) {
         AllAlphabet aa = new AllAlphabet();
-        aa.solution3("A",'A');
+        aa.solution4("",1);
     }
 }
