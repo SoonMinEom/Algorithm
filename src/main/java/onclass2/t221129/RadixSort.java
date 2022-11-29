@@ -3,18 +3,10 @@ package onclass2.t221129;
 import java.util.Arrays;
 
 public class RadixSort {
-    public void sort(int[] arr) {
+    public static int[] sort(int[] arr) {
         int[] sortedArr = new int[10];
-
-        for (int i : arr) {
-            sortedArr[i] =i;
-            }
-
-        for (int i = 0; i < sortedArr.length; i++) {
-            if (sortedArr[i] == i) {
-                System.out.println(sortedArr[i]);
-            }
-        }
+        for (int i : arr) sortedArr[i] =i;
+        return sortedArr;
     }
 
     public static void main(String[] args) {
