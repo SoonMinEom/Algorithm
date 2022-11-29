@@ -13,18 +13,24 @@ public class RadixSort {
     }
 
     //숫자 자릿수 구하기
-    public static Set<Integer> maxLength(int[] arr) {
+    public static int[] maxDigit(int[] arr) {
         Set<Integer> set = new HashSet<>();
         for (int i : arr) {
             if (i !=0) set.add((int)(Math.log10(i)+1));
         }
-        return set;
+
+        int idx = 0;
+        int[] digit = new int[set.size()];
+        for (Integer integer : set) {
+            digit[idx++] = integer;
+        }
+        return digit;
     }
 
     public static void main(String[] args) {
-        int[] arr = {7,4,5,9,1,0};
+        int[] arr = {7,4,5,9,1,0,23,520};
         RadixSort rs = new RadixSort();
-        rs.sort(arr);
-        rs.maxLength(arr);
+//        rs.sort(arr);
+        System.out.println(Arrays.toString(rs.maxDigit(arr)));
     }
 }
