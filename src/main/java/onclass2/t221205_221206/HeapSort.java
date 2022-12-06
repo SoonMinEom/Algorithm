@@ -1,4 +1,4 @@
-package onclass2.t221205;
+package onclass2.t221205_221206;
 
 import java.util.Arrays;
 
@@ -23,15 +23,23 @@ public class HeapSort {
         }
 
         // 바꾸기
-        int temp = arr[parentIdx];
-        arr[parentIdx] = arr[greaterIdx];
-        arr[greaterIdx] = temp;
+        if (parentIdx != greaterIdx) {
+            int temp = arr[parentIdx];
+            arr[parentIdx] = arr[greaterIdx];
+            arr[greaterIdx] = temp;
+            sort(arr, greaterIdx);
+        }
+
 
         return arr;
     }
 
     public static void main(String[] args) {
-        int[] arr = {6,5,7,8};
-        System.out.println(Arrays.toString(sort(arr,1)));
+        int[] arr = {10,9,5,8,3,2,4,6,7,1};
+
+        for (int i = (arr.length-2); i >0 ; i--) {
+            System.out.println(Arrays.toString(sort(arr,i)));
+        }
+
     }
 }
