@@ -1,5 +1,7 @@
 package onclass2.t221208_221209;
 
+// https://codeup.kr/problem.php?id=2699
+
 import java.util.Arrays;
 import java.util.Scanner;
 
