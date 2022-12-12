@@ -9,7 +9,10 @@ public class DynamicMCP {
 
         for (int i = 0; i < dp.length; i++) {
             for (int j = 0; j < dp[0].length; j++) {
+                //(0,0) 채우기
                 if ( i == 0 && j == 0) dp[i][j] = arr[i][j];
+                //첫 행 나머지 채우기
+                else if ( i == 0 && j != 0 ) dp[i][j] = dp[i][j-1] + arr[i][j];
             }
         }
 
