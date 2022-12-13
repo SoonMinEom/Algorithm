@@ -18,6 +18,10 @@ public class OptimalStrategy2 {
         for (int i = 0; i < dp.length; i++) {
             for (int j = 0; j < dp[0].length; j++) {
                 if (i == j) dp[i][j] = new Pair(arr[i],0);
+                else if(i+1 == j) {
+                    if (arr[i] >= arr[j]) dp[i][j] = new Pair(arr[i],arr[j]);
+                    else dp[i][j] = new Pair(arr[j],arr[i]);
+                }
                 else dp[i][j] = new Pair(0,0);
             }
         }
