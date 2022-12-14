@@ -1,5 +1,7 @@
 package onclass2.t221213;
 
+import java.util.Arrays;
+
 class Pair {
     int left;
     int right;
@@ -32,5 +34,23 @@ public class OptimalStrategy2 {
             }
             System.out.println();
         }
+
+        System.out.println("-----------------------------------");
+
+        // 첫째 줄 dp 해보기
+
+        int[] arr2 = {2,7,40,19};
+        int[][] dp2 = new int[4][4];
+        int k = 0; //첫째 줄 고정
+        for (int i = 0; i < dp2.length; i++) {
+            if (i == 0) dp2[k][i] = arr2[i];
+            else dp2[k][i] = dp2[k][i-1] + arr2[i];
+        }
+
+        System.out.println(Arrays.toString(dp2[k]));
+
+
+
+
     }
 }
