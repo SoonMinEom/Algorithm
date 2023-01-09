@@ -1,4 +1,4 @@
-package programers.level_0;
+package programers.level_0.part1;
 
 public class 연속된수의합 {
     public int[] solution(int num, int total) {

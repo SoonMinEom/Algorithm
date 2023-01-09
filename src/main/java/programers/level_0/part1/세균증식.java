@@ -1,4 +1,4 @@
-package programers.level_0;
+package programers.level_0.part1;
 // https://school.programmers.co.kr/learn/courses/30/lessons/120910
 
 public class 세균증식 {

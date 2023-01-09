@@ -1,4 +1,4 @@
-package programers.level_0;
+package programers.level_0.part1;
 //https://school.programmers.co.kr/learn/courses/30/lessons/120911
 import java.util.Arrays;
 

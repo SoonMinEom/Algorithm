@@ -1,4 +1,4 @@
-package programers.level_0;
+package programers.level_0.part1;
 
 public class 배열의유사도 {
     public int solution(String[] s1, String[] s2) {
